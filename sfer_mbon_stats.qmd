@@ -9,12 +9,10 @@ jupyter:
       format_version: '1.0'
       jupytext_version: 1.19.3
   kernelspec:
-    display_name: seas_env
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
-
-
 
 ```{python}
 # Load libraries and 'SFER_data.csv' table
@@ -22,7 +20,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load SFER data table
-sfer_data = pd.read_csv('~/plankton_imaging/SFER_data.csv')
+sfer_data = pd.read_csv('data/SFER_data.csv')
 print(sfer_data.head())
 ```
 
@@ -87,7 +85,7 @@ plt.xticks(rotation=90)
 plt.tight_layout()
 
 # Save the plot to a file
-plt.savefig('c_stations_over_time.png')
+plt.savefig('figures/c_stations_over_time.png')
 
 plt.show()
 ```
@@ -113,7 +111,7 @@ plt.xticks(rotation=90)
 plt.tight_layout()
 
 # Save the plot to a file
-plt.savefig('f_stations_over_time.png')
+plt.savefig('figures/f_stations_over_time.png')
 
 plt.show()
 ```
@@ -137,7 +135,7 @@ plt.legend(title='Depth Class')
 plt.tight_layout()
 
 # Save the plot to a file
-plt.savefig('chl_samples_by_depth_class.png')
+plt.savefig('figures/chl_samples_by_depth_class.png')
 
 plt.show()
 ```
@@ -157,7 +155,7 @@ plt.legend(title='Depth Class')
 plt.tight_layout()
 
 # Save the plot to a file
-plt.savefig('no3_no2_samples_by_depth_class.png')
+plt.savefig('figures/no3_no2_samples_by_depth_class.png')
 
 plt.show()
 ```
@@ -182,7 +180,7 @@ plt.xticks(rotation=45, fontsize=18)
 plt.yticks(fontsize=18)
 plt.legend(title='Depth Class', fontsize=18, title_fontsize=18)
 plt.tight_layout()
-plt.savefig('chl_samples_by_depth_class_2024-2025.png')
+plt.savefig('figures/chl_samples_by_depth_class_2024-2025.png')
 plt.show()
 
 # Filter the 'no3_no2' data for the specified time window
@@ -200,7 +198,7 @@ plt.xticks(rotation=45, fontsize=18)
 plt.yticks(fontsize=18)
 plt.legend(title='Depth Class', fontsize=18, title_fontsize=18)
 plt.tight_layout()
-plt.savefig('no3_no2_samples_by_depth_class_2024-2025.png')
+plt.savefig('figures/no3_no2_samples_by_depth_class_2024-2025.png')
 plt.show()
 
 # Filter 'C' and 'F' station data for the specified time window
@@ -319,7 +317,7 @@ else:
     plt.legend(title='Depth Class', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
 
-    plt.savefig('eukarya_samples_by_depth_class.png')
+    plt.savefig('figures/eukarya_samples_by_depth_class.png')
     plt.show()
 
     print(f"Total samples plotted: {monthly_euk_samples_by_depth.sum().sum()}")
@@ -393,7 +391,7 @@ else:
     plt.legend(title='Depth Class', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
 
-    plt.savefig('bacteria_samples_by_depth_class.png')
+    plt.savefig('figures/bacteria_samples_by_depth_class.png')
     plt.show()
 
     print(f"Total samples plotted: {monthly_euk_samples_by_depth.sum().sum()}")
@@ -403,7 +401,7 @@ else:
 
 ```{python}
 # Load SAMPLE metadata
-mbon_data_sample = pd.read_csv('FAIRe-NOAA_noaa-aoml-seusmbon - sampleMetadata.csv', header=2)
+mbon_data_sample = pd.read_csv('data/FAIRe-NOAA_noaa-aoml-seusmbon - sampleMetadata.csv', header=2)
 
 # Filter metadata by 'samp_category' and 'extraction_status'
 mbon_data_sample = mbon_data_sample[mbon_data_sample['samp_category'] == 'sample']
@@ -476,7 +474,7 @@ plt.legend(title='Depth Class')
 plt.tight_layout()
 
 # Save the plot to a file
-plt.savefig('unique_samp_name_stackplot.png')
+plt.savefig('figures/unique_samp_name_stackplot.png')
 
 plt.show()# Print the total number of 'Eukarya-18S-V9' samples that were plotted
 print(f"Total unique 'samp_name' plotted: {stackplot_data.sum().sum()}")
@@ -525,7 +523,7 @@ else:
     plt.tight_layout()
 
     # Save the updated plot to a file
-    plt.savefig('bacteria_samples_by_platform.png')
+    plt.savefig('figures/bacteria_samples_by_platform.png')
     plt.show()
 
     # Fixed the bug at the end to sum the correct platform dataframe
@@ -536,7 +534,7 @@ else:
 
 ```{python}
 # Load SAMPLE metadata
-mbon_data_sample = pd.read_csv('FAIRe-NOAA_noaa-aoml-seusmbon - sampleMetadata.csv', header=2)
+mbon_data_sample = pd.read_csv('data/FAIRe-NOAA_noaa-aoml-seusmbon - sampleMetadata.csv', header=2)
 
 # Filter metadata by 'samp_category' and 'extraction_status'
 mbon_data_sample = mbon_data_sample[mbon_data_sample['samp_category'] == 'sample']
@@ -606,7 +604,7 @@ plt.legend(title='Extraction Status', bbox_to_anchor=(1.05, 1), loc='upper left'
 plt.tight_layout()
 
 # Save the plot to a file
-plt.savefig('samples_by_extraction_status.png')
+plt.savefig('figures/samples_by_extraction_status.png')
 
 # Print summary verification
 print(f"Total samples plotted: {monthly_status.sum().sum()}")
