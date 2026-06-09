@@ -1,3 +1,22 @@
+*/batched_reports/*
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+*.Rproj
+
+/.quarto/
+*_cache/
+*.cache/
+*_files/
+_site/*
+site_libs/*
+
+*.html
+**/*.quarto_ipynb
+
 # notrack input data & generated files
 data/
 figures/
