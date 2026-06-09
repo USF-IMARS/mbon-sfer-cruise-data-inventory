@@ -1,5 +1,5 @@
 ---
-title: "quartobatch template"
+title: "SFER+MBON Cruise Reporting"
 ---
 
-This project uses [quartobatch](https://github.com/7yl4r/quartobatch).
+A set of reports on data availability from the MBON+SFER Research Cruises.

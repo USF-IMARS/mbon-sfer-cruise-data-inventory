@@ -1,5 +1,5 @@
 ---
-title: This notebook generates statistics from SFER_data and SEUS MBON eDNA sampling
+title: SFER_data & SEUS MBON eDNA sampling
 jupyter:
   jupytext:
     formats: ipynb,qmd
