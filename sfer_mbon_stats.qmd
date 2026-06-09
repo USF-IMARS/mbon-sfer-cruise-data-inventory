@@ -227,7 +227,7 @@ print(station_counts_df)
 
 ```{python}
 # Load EXPERIMENT metadata
-mbon_data_experiment = pd.read_csv('FAIRe-NOAA_noaa-aoml-seusmbon - experimentRunMetadata.csv', header=2)
+mbon_data_experiment = pd.read_csv('data/FAIRe-NOAA_noaa-aoml-seusmbon - experimentRunMetadata.csv', header=2)
 
 # 1. Extract information from 'samp_name' into new columns
 split_names = mbon_data_experiment['samp_name'].str.split('_', expand=True)
